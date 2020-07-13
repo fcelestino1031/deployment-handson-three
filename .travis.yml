@@ -18,3 +18,4 @@ script:
     on:
       branch: master
 
+group: edge
