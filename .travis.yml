@@ -1,21 +1,19 @@
-# .travis.yml file
-language: node_js
-node_js:
-  - "8"
-services: mongodb
-cache:
-  directories:
-  - "node_modules"
-sudo: false
-install:
-  - npm install
-script:
-  - npm test
-  deploy:
-  - provider: script
-    skip_cleanup: true
-    script: chmod +x ./deploy.sh && ./deploy.sh
-    on:
-      branch: master
-
+--- 
+branch: master
+cache: 
+  directories: 
+    - node_modules
+deploy: 
+  - 
+    provider: script
 group: edge
+install: 
+  - "npm install"
+language: node_js
+node_js: 
+  - "8"
+script: "chmod +x ./deploy.sh && ./deploy.sh"
+services: mongodb
+skip_cleanup: true
+sudo: false
+true: ~
